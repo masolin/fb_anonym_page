@@ -1,0 +1,13 @@
+<%= form_for post do |f| %>
+  <div class="row">
+    <div class="input-field">
+      <%= f.text_area :content, class: "materialize-textarea", required: true %>
+      <%= f.label :content %>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= f.submit "Post", class: "btn" %>
+      </div>
+    </div>
+  </div>
+<% end %>

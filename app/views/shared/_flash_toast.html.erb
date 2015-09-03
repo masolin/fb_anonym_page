@@ -1,0 +1,7 @@
+<% if flash[:toastr] %>
+  <script type="text/javascript">
+    <% flash[:toastr].each do |msg| %>
+      Materialize.toast("<%= msg %>", 4000);
+    <% end %>
+  </script>
+<% end %>
