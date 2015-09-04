@@ -54,4 +54,10 @@ end
 # Use materialize design
 gem 'materialize-sass', '~> 0.97'
 
+# For facebook graph api
+gem 'koala', '~> 2.2'
+
+# For setting
+gem "figaro"
+
 ruby '2.2.3'

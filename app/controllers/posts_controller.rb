@@ -44,6 +44,12 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def post_to_fb_page
+    post = Post.find(params[:id])
+    post.to_fb_page
+    redirect_to posts_url
+  end
+
   private
 
   def post_params
