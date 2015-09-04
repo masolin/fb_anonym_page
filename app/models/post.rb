@@ -4,5 +4,6 @@ class Post < ActiveRecord::Base
   def to_fb_page
     @@page_graph ||= Koala::Facebook::API.new(ENV['page_token'])
     @@page_graph.put_wall_post(content)
+    update_attribute(:published, true)
   end
 end

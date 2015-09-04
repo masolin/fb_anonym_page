@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = params[:published] ? Post.where(published: true) : Post.where(published: false)
   end
 
   def show
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def post_to_fb_page
+  def publish_to_fb
     post = Post.find(params[:id])
     post.to_fb_page
     redirect_to posts_url

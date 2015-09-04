@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     member do
-      get 'post_to_fb_page'
+      get 'publish_to_fb'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
