@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  layout 'admin', except: :new
+
   def index
-    @posts = params[:published] ? Post.where(published: true) : Post.where(published: false)
+    @posts = params[:published] ? Post.recent.published : Post.recent.published(false)
   end
 
   def show

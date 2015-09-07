@@ -2,6 +2,14 @@
   <div class="col s12 m8 offset-m2">
     <div class="card teal">
       <div class="card-content white-text">
+        <% unless post.publish_number.nil? %>
+          <div class="card-title">
+            <%= "\##{post.publish_number}" %>
+          </div>
+        <% end %>
+
+        <%= time_tag(post.created_at) %>
+
         <%= simple_format(post.content) %>
       </div>
       <div class="card-action">

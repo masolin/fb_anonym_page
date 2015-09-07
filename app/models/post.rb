@@ -1,9 +1,11 @@
 class Post < ActiveRecord::Base
   validates :content, presence: true, length: { maximum: 63_206 }
 
+  scope :published, -> (boolean = true) { where(published: boolean) }
+  scope :recent, -> { order(created_at: :desc) }
+
   def to_fb_page
-    @@page_graph ||= Koala::Facebook::API.new(ENV['page_token'])
-    @@page_graph.put_wall_post(content)
-    update_attribute(:published, true)
+    publish_number = PublishToFbService.instance.publish(self)
+    update_attributes(published: true, publish_number: publish_number)
   end
 end

@@ -5,10 +5,15 @@
 </head>
 <body>
 
-<div class="container">
+<%= render 'shared/navbar' %>
+
+<main>
+  <div class="container">
   <%= render 'shared/flash_toast' %>
   <%= yield %>
-</div>
+  </div>
+</main>
 
+<%= render 'shared/footer' %>
 </body>
 </html>

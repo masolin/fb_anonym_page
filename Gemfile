@@ -41,6 +41,9 @@ group :development, :test do
 
   # Use pry-remote due to using powder
   gem 'pry-remote'
+
+  # Produce fake data
+  gem 'faker'
 end
 
 group :development do
@@ -59,5 +62,8 @@ gem 'koala', '~> 2.2'
 
 # For setting
 gem "figaro"
+
+# Website setting
+gem 'rails-settings-cached'
 
 ruby '2.2.3'
