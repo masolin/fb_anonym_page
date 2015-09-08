@@ -1,11 +1,17 @@
 <%= form_for post do |f| %>
   <div class="row">
-    <div class="input-field">
+    <div class="input-field col s12 m4 offset-m2">
+      <%= f.select(:tag_list, options_for_select(@tags), prompt: 'Select one tag') %>
+      <%= f.label :tag_list %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12 m8 offset-m2">
       <%= f.text_area :content, class: "materialize-textarea", required: true %>
       <%= f.label :content %>
     </div>
     <div class="row">
-      <div class="col">
+      <div class="col offset-m2">
         <%= f.submit "Post", class: "btn" %>
       </div>
     </div>

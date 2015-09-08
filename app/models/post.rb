@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  acts_as_taggable
+
   validates :content, presence: true, length: { maximum: 63_206 }
 
   scope :published, -> (boolean = true) { where(published: boolean) }

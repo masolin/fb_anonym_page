@@ -11,7 +11,8 @@ class PublishToFbService
   def publish(post)
     current_number = post_number
     page_name_tag = '#' + @page_name + current_number.to_s
-    content = page_name_tag + "\n" + post.content
+    post_tag = post.tag_list.map { |t| '#' + t }.join(' ')
+    content = page_name_tag + ' ' + post_tag + "\n" + post.content
     @page_graph.put_wall_post(content)
     self.post_number += 1
     current_number

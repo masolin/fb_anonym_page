@@ -66,4 +66,7 @@ gem "figaro"
 # Website setting
 gem 'rails-settings-cached'
 
+# Tag function for post
+gem 'acts-as-taggable-on', '~> 3.4'
+
 ruby '2.2.3'

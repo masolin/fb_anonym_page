@@ -8,8 +8,10 @@
 
 100.times do |number|
   fake_content = Faker::Lorem.paragraphs(3, true).join("\n")
-  fake_published = number < 5 ? true : false
+  fake_tag = Setting['tag list'].sample
+  fake_published = false
   Post.create!(
     content: fake_content,
+    tag_list: fake_tag,
     published: fake_published)
 end
