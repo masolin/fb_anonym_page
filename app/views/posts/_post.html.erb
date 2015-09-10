@@ -4,7 +4,7 @@
       <div class="card-content white-text">
         <div class="card-title">
           <%= "\##{post.publish_number}" if post.publish_number.present? %>
-          <%= "\##{post.tag_list.join(" ")} " %>
+          <%= "\##{post.category_list.join(" ")} " %>
         </div>
 
         <%= time_tag(post.created_at) %>

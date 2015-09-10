@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col s12 m8 offset-m2">
+    <%= form_for [:admin, @setting], method: :put do |f| %>
+      <div class="input-field">
+        <%= f.text_field :page_name %>
+        <%= f.label :page_name %>
+      </div>
+      <div class="input-field">
+        <%= f.number_field :start_number %>
+        <%= f.label :start_number %>
+      </div>
+      <div class="input-field">
+        <%= f.text_field :categories, data: { role: 'materialtags' } %>
+        <%= f.label :categories %>
+      </div>
+      <%= f.submit "Update", class: "btn" %>
+    <% end %>
+  </div>
+</div>

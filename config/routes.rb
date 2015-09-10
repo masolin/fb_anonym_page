@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'settings/edit' => 'settings#edit'
+    put 'settings' => 'settings#update'
+    patch 'settings' => 'settings#update'
+  end
+
   root 'posts#new'
 
   resources :posts do

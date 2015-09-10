@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @tags = Setting['tag_list']
+    @categories = Setting['category_list']
   end
 
   def edit
@@ -56,6 +56,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :tag_list)
+    params.require(:post).permit(:content, :category_list)
   end
 end
