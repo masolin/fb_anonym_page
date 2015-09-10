@@ -1,9 +1,9 @@
 module ApplicationHelper
-  def published_posts_path
-    posts_path(published: true)
+  def admin_published_posts_path
+    admin_posts_path(published: true)
   end
 
-  def published_posts_url
-    posts_url(published: true)
+  def admin_published_posts_url
+    admin_posts_url(published: true)
   end
 end

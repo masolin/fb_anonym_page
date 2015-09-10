@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
+  root 'posts#new'
+
   namespace :admin do
+    resources :posts, except: [:new, :create] do
+      get 'publish_to_fb', on: :member
+    end
+
     get 'settings/edit' => 'settings#edit'
     put 'settings' => 'settings#update'
     patch 'settings' => 'settings#update'
   end
 
-  root 'posts#new'
-
-  resources :posts do
-    member do
-      get 'publish_to_fb'
-    end
-  end
+  resources :posts, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

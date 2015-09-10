@@ -19,7 +19,7 @@ class PublishToFbService
   end
 
   def post_number
-    Setting['start_number']
+    Setting['start_number'].to_i
   end
 
   private
