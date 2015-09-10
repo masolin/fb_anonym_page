@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @tags = Setting['tag list']
+    @tags = Setting['tag_list']
   end
 
   def edit

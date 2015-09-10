@@ -5,7 +5,7 @@ class PublishToFbService
 
   def initialize
     @page_graph = Koala::Facebook::API.new(ENV['page_token'])
-    @page_name = Setting['page name'].gsub(/\s+/, "")
+    @page_name = Setting['page_name'].gsub(/\s+/, "")
   end
 
   def publish(post)
@@ -19,12 +19,12 @@ class PublishToFbService
   end
 
   def post_number
-    Setting['start number']
+    Setting['start_number']
   end
 
   private
 
   def post_number=(number)
-    Setting['start number'] = number
+    Setting['start_number'] = number
   end
 end
