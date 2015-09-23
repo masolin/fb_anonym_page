@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  # single user system
+  devise_for :users, skip: :registrations
+
   root 'posts#new'
 
   namespace :admin do
+    root 'posts#index'
     resources :posts, except: [:new, :create] do
       get 'publish_to_fb', on: :member
     end

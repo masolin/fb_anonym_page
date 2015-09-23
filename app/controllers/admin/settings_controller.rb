@@ -1,4 +1,6 @@
 class Admin::SettingsController < ApplicationController
+  before_action :authenticate_user!
+
   layout 'admin'
 
   def edit

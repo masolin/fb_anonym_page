@@ -69,4 +69,7 @@ gem 'rails-settings-cached'
 # Tag function for post
 gem 'acts-as-taggable-on', '~> 3.4'
 
+# User authentication
+gem 'devise'
+
 ruby '2.2.3'
