@@ -1,2 +1,2 @@
-$(document).ready ->
+$(document).on 'page:chage', ->
   $(".button-collapse").sideNav()
