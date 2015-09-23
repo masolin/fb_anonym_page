@@ -1,14 +1,20 @@
 # RailsSettings Model
 class Setting < RailsSettings::CachedSettings
-  def self.categories
-    self.category_list.join(',')
-  end
+  class << self
+    def categories
+      self.category_list.join(',')
+    end
 
-  def self.categories=(names)
-    self.category_list = names.split(',').map(&:strip)
-  end
+    def categories=(names)
+      self.category_list = names.split(',').map(&:strip)
+    end
 
-  def self.update_attributes(params)
-    params.each_pair { |k, v| send("#{k}=", v) }
+    def update_attributes(params)
+      params.each_pair { |k, v| send("#{k}=", v) }
+    end
+
+    def is_auto_post?
+      self.auto_post == 'false' ? false : !!self.auto_post
+    end
   end
 end

@@ -16,6 +16,7 @@ class Admin::SettingsController < ApplicationController
   private
 
   def setting_params
-    params.require(:setting).permit(:page_name, :start_number, :categories)
+    params.require(:setting).permit(:page_name, :start_number, :categories,
+      :auto_post)
   end
 end

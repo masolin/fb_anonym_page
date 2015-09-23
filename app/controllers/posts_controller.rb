@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+      @post.to_fb_page if Setting.is_auto_post?
       flash[:toastr] = ['Add post succeful!']
       redirect_to root_url
     else
