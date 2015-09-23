@@ -1,20 +1,29 @@
 <div class="row">
   <div class="col s12 m8 offset-m2">
-    <div class="card teal">
-      <div class="card-content white-text">
+    <div class="card post">
+      <div class="card-content">
         <div class="card-title">
           <%= "\##{post.publish_number}" if post.publish_number.present? %>
           <%= "\##{post.category_list.join(" ")} " %>
         </div>
-
-        <%= time_tag(post.created_at) %>
+        <div class="post-time">
+          <%= time_tag(post.created_at) %>
+        </div>
 
         <%= simple_format(post.content) %>
       </div>
       <div class="card-action">
-        <%= link_to "edit", edit_admin_post_path(post) %>
-        <%= link_to "delete", admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= link_to "post to fb", publish_to_fb_admin_post_path(post) %>
+        <%= link_to edit_admin_post_path(post) do %>
+          <i class="fa fa-pencil-square-o fa-lg"></i>
+        <% end %>
+        <%= link_to publish_to_fb_admin_post_path(post) do %>
+          <i class="fa fa-facebook-square fa-lg"></i>
+        <% end %>
+        <span class="remove">
+          <%= link_to admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash-o fa-lg"></i>
+          <% end %>
+        </span>
       </div>
     </div>
   </div>

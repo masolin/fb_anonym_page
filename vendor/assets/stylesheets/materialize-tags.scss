@@ -21,10 +21,10 @@
   }
 
   &.active{
-    border-bottom-color: #26a69a;
-    -webkit-box-shadow: 0 1px 0 0 #26a69a;
-    -moz-box-shadow: 0 1px 0 0 #26a69a;
-    box-shadow: 0 1px 0 0 #26a69a;
+    border-bottom-color: $secondary-color;
+    -webkit-box-shadow: 0 1px 0 0 $secondary-color;
+    -moz-box-shadow: 0 1px 0 0 $secondary-color;
+    box-shadow: 0 1px 0 0 $secondary-color;
     outline: none;
   }
 
@@ -77,7 +77,7 @@
       position: relative;
       right: auto;
       display: inline-block;
-      background: deepskyblue;
+      background: $secondary-color;
       font-weight: 300;
       font-size: .85rem;
       -webkit-border-radius: 4px;
@@ -109,7 +109,7 @@
       padding: 2px 10px !important;
     }
     .tt-cursor {
-      background: deepskyblue;
+      background: $secondary-color;
       color: #ffffff;
     }
   }

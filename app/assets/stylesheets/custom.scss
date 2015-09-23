@@ -1,2 +1,83 @@
+$primary-color: #ffc400;
+$secondary-color: #689f38;
+$fb-color: #3B5998;
 @import "materialize";
 @import "materialize-tags";
+
+.admin {
+  background: color('grey', 'lighten-4');
+}
+
+.logo {
+  color: $primary-color;
+  font-size: 15rem;
+}
+
+.page-name {
+  h1 {
+    font-weight: lighter;
+  }
+}
+
+form {
+  .btn {
+    @extend .amber, .accent-3;
+    @extend .black-text;
+  }
+  select {
+    color: #ffab00;
+  }
+}
+
+footer {
+  a {
+    color: $secondary-color;
+  }
+}
+
+.nav-wrapper {
+  .brand-logo {
+    font-weight: lighter;
+  }
+  a {
+    @extend .black-text;
+    letter-spacing: 1px;
+  }
+}
+
+.post {
+  .card-title {
+    color: $secondary-color;
+  }
+  .post-time {
+    color: $fb-color;
+    //color: $secondary-color;
+  }
+  .remove {
+    @extend .right;
+  }
+  .fa-pencil-square-o {
+    color: $secondary-color;
+    &:hover {
+      color: lighten($secondary-color, 20%);
+    }
+  }
+  .fa-facebook-square {
+    color: $fb-color;
+    &:hover {
+      color: lighten($fb-color, 20%);
+    }
+  }
+  .fa-trash-o {
+    color: $primary-color;
+    &:hover {
+      color: lighten($primary-color, 20%);
+    }
+  }
+}
+
+.setting-title {
+  h2 {
+    font-weight: 300;
+  }
+}

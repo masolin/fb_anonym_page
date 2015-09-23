@@ -1,17 +1,17 @@
 <%= form_for post do |f| %>
   <div class="row">
-    <div class="input-field col s12 m4 offset-m2">
+    <div class="input-field col s12 m5 offset-m1">
       <%= f.select(:category_list, options_for_select(@categories), prompt: 'Select a category') %>
       <%= f.label :category_list %>
     </div>
   </div>
   <div class="row">
-    <div class="input-field col s12 m8 offset-m2">
+    <div class="input-field col s12 m10 offset-m1">
       <%= f.text_area :content, class: "materialize-textarea", required: true %>
       <%= f.label :content %>
     </div>
     <div class="row">
-      <div class="col offset-m2">
+      <div class="col s12 m10 offset-m1">
         <%= f.submit "Post", class: "btn" %>
       </div>
     </div>
