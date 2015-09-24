@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # single user system
   devise_for :users, skip: :registrations
+  as :user do
+    get 'users/edit' => 'users/registrations#edit', :as => 'edit_user_registration'
+    patch 'users' => 'users/registrations#update', :as => 'user_registration'
+  end
 
   root 'posts#new'
 
