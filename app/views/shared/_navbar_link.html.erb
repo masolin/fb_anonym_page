@@ -1,4 +1,13 @@
 <li><%= link_to "Unpublished", admin_posts_path %></li>
 <li><%= link_to "Published", admin_published_posts_path %></li>
 <li><%= link_to "Setting", admin_settings_edit_path, data: { no_turbolink: true } %></li>
-<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+<li>
+  <%= link_to '#' do %>
+    <i class="fa fa-user"></i>
+  <% end %>
+</li>
+<li>
+  <%= link_to destroy_user_session_path, method: :delete do %>
+    <i class="fa fa-sign-out"></i>
+  <% end %>
+</li>

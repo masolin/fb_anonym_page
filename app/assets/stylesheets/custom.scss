@@ -9,7 +9,7 @@ $fb-color: #3B5998;
 }
 
 .logo {
-  color: $primary-color;
+  color: $fb-color;
   font-size: 15rem;
 }
 
@@ -19,13 +19,10 @@ $fb-color: #3B5998;
   }
 }
 
-form {
+#new_post {
   .btn {
-    @extend .amber, .accent-3;
-    @extend .black-text;
-  }
-  select {
-    color: #ffab00;
+    background-color: $fb-color;
+    @extend .white-text;
   }
 }
 
@@ -51,7 +48,6 @@ footer {
   }
   .post-time {
     color: $fb-color;
-    //color: $secondary-color;
   }
   .remove {
     @extend .right;
@@ -80,4 +76,8 @@ footer {
   h2 {
     font-weight: 300;
   }
+}
+
+.login h2 {
+  font-weight: lighter;
 }
