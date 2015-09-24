@@ -72,4 +72,10 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # User authentication
 gem 'devise'
 
+# Gemfile for Rails 3+, Sinatra, and Merb
+gem 'will_paginate', '~> 3.0.6'
+
+# Customize will paginate with materialize
+gem 'will_paginate-materialize'
+
 ruby '2.2.3'

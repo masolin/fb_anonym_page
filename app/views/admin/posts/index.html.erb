@@ -1,1 +1,3 @@
+<%= will_paginate @posts, :params => { published: @published }, renderer: MaterializePagination::Rails %>
 <%= render @posts %>
+<%= will_paginate @posts, :params => { published: @published }, renderer: MaterializePagination::Rails %>

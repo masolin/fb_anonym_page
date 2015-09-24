@@ -81,3 +81,8 @@ footer {
 .login h2 {
   font-weight: lighter;
 }
+
+// will_paginate-materialize setting
+.pagination a li.active {
+    color: #fff;
+}

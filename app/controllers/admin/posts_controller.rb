@@ -4,7 +4,8 @@ class Admin::PostsController < ApplicationController
   layout 'admin'
 
   def index
-    @posts = params[:published] ? Post.recent.published : Post.recent.published(false)
+    @published = params[:published] || false
+    @posts = Post.recent.published(@published).page(params[:page])
   end
 
   def show

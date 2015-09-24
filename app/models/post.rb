@@ -3,7 +3,9 @@ class Post < ActiveRecord::Base
 
   validates :content, presence: true, length: { maximum: 63_206 }
 
-  scope :published, -> (boolean = true) { where(published: boolean) }
+  scope :published, -> (boolean = true) do
+    boolean.blank? ? where(published: false) : where(published: boolean)
+  end
   scope :recent, -> { order(created_at: :desc) }
 
   def to_fb_page
