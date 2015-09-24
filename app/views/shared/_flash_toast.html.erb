@@ -1,6 +1,7 @@
-<% if flash[:toastr] %>
+<% [:toastr, :notice, :alert].each do |type| %>
+  <% next unless flash[type] %>
   <script type="text/javascript">
-    <% flash[:toastr].each do |msg| %>
+    <% Array(flash[type]).each do |msg| %>
       Materialize.toast("<%= msg %>", 4000);
     <% end %>
   </script>

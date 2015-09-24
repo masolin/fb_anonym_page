@@ -9,7 +9,7 @@ class Admin::SettingsController < ApplicationController
 
   def update
     Setting.update_attributes(setting_params)
-    flash[:toastr] = ['Setting updated!']
+    flash[:toastr] = 'Setting updated!'
     redirect_to admin_settings_edit_path
   end
 

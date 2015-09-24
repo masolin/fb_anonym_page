@@ -19,7 +19,7 @@ class Admin::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-      flash[:toastr] = ['Update post succeful!']
+      flash[:toastr] = 'Update post succeful!'
       redirect_to admin_posts_url
     else
       flash.now[:toastr] = @post.errors.full_messages
@@ -30,7 +30,7 @@ class Admin::PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    flash[:toastr] = ['Delete post succeful!']
+    flash[:toastr] = 'Delete post succeful!'
     redirect_to admin_posts_url
   end
 

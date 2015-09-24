@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       @post.to_fb_page if Setting.is_auto_post?
-      flash[:toastr] = ['Add post succeful!']
+      flash[:toastr] = 'Add post succefully!'
       redirect_to root_url
     else
       flash.now[:toastr] = @post.errors.full_messages
