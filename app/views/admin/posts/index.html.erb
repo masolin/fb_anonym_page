@@ -1,3 +1,7 @@
-<%= will_paginate @posts, :params => { published: @published }, renderer: MaterializePagination::Rails %>
+<div class="center">
+  <%= will_paginate @posts, :params => { published: @published }, renderer: MaterializePagination::Rails %>
+</div>
 <%= render @posts %>
-<%= will_paginate @posts, :params => { published: @published }, renderer: MaterializePagination::Rails %>
+<div class="center">
+  <%= will_paginate @posts, :params => { published: @published }, renderer: MaterializePagination::Rails %>
+</div>
