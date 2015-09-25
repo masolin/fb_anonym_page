@@ -1,2 +1,12 @@
-<h1>Facebook Anonym Page</h1>
-<%= render 'form', post: @post %>
+<div class="row edit-post">
+  <div class="col s12 m8 offset-m2">
+    <div class="card-panel">
+      <div class="row">
+        <div class="col s12 offset-m1">
+          <h2>Edit Post</h2>
+        </div>
+      </div>
+      <%= render 'posts/form', post: @post %>
+   </div>
+  </div>
+</div>

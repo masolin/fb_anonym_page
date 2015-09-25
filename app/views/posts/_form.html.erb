@@ -1,7 +1,7 @@
-<%= form_for post do |f| %>
+<%= form_for post, url: (post.new_record? ? posts_path : admin_post_path(post)) do |f| %>
   <div class="row">
     <div class="input-field col s12 m5 offset-m1">
-      <%= f.select(:category_list, options_for_select(@categories), prompt: 'Select a category') %>
+      <%= f.select(:category_list, options_for_select(@categories, post.categories), prompt: 'Select a category') %>
       <%= f.label :category_list %>
     </div>
   </div>
@@ -12,7 +12,7 @@
     </div>
     <div class="row">
       <div class="col s12 m10 offset-m1">
-        <%= f.submit "Post", class: "btn" %>
+        <%= f.submit class: "btn" %>
       </div>
     </div>
   </div>
