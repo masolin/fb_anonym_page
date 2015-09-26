@@ -81,4 +81,7 @@ gem 'will_paginate-materialize'
 # Facebook OmniAuth
 gem 'omniauth-facebook'
 
+# Fix turbolinks issues with jquery
+gem 'jquery-turbolinks'
+
 ruby '2.2.3'
