@@ -5,6 +5,18 @@ However, facebook is a real-name system. People cannot post anonymous comments
 directly.
 
 This Rails app allow that people publish anonymous comments to facebook page.
+At the back-end, admin can change app setting to allow that user publish posts
+directly to facebook page or not.
+If admin disable auto-post function, posts need to be reviewed by admin.
+
+The app would not store IP or other user information in database. It only store
+content of posts.
+
+## Demo
+
+* Demo site: https://fb-anonym-page.herokuapp.com
+
+* Demo facebook test page: https://www.facebook.com/Anonym-Test-Page-715425985259271/
 
 ### Front-end screenshot
 
