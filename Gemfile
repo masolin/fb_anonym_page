@@ -84,4 +84,11 @@ gem 'omniauth-facebook'
 # Fix turbolinks issues with jquery
 gem 'jquery-turbolinks'
 
+group :production do
+  # Deploy to heroku
+  gem 'rails_12factor'
+
+  # puma server
+  gem 'puma'
+end
 ruby '2.2.3'
