@@ -13,17 +13,19 @@
         <%= simple_format(post.content) %>
       </div>
       <div class="card-action">
-        <%= link_to edit_admin_post_path(post) do %>
-          <i class="fa fa-pencil-square-o fa-lg"></i>
+        <% unless post.published %>
+          <span class="unpublished">
+            <%= link_to edit_admin_post_path(post) do %>
+              <i class="fa fa-pencil-square-o fa-lg"></i>
+            <% end %>
+            <%= link_to publish_to_fb_admin_post_path(post), method: :post do %>
+              <i class="fa fa-facebook-square fa-lg"></i>
+            <% end %>
+          </span>
         <% end %>
-        <%= link_to publish_to_fb_admin_post_path(post) do %>
-          <i class="fa fa-facebook-square fa-lg"></i>
+        <%= link_to admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fa fa-trash-o fa-lg"></i>
         <% end %>
-        <span class="remove">
-          <%= link_to admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fa fa-trash-o fa-lg"></i>
-          <% end %>
-        </span>
       </div>
     </div>
   </div>

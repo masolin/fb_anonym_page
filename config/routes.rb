@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'posts#index'
     resources :posts, except: [:new, :create] do
-      get 'publish_to_fb', on: :member
+      post 'publish_to_fb', on: :member
     end
 
     get 'settings/edit' => 'settings#edit'
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:new, :create]
+
+  get '/auth/:provider/callback', to: 'admin/settings#edit'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -49,8 +49,12 @@ footer {
   .post-time {
     color: $fb-color;
   }
-  .remove {
-    @extend .right;
+  .card-action {
+    text-align: right;
+    .unpublished {
+      text-align: left;
+      @extend .left;
+    }
   }
   .fa-pencil-square-o {
     color: $secondary-color;

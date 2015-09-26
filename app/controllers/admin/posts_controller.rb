@@ -37,7 +37,7 @@ class Admin::PostsController < ApplicationController
 
   def publish_to_fb
     post = Post.find(params[:id])
-    post.to_fb_page
+    flash[:toastr] = (post.to_fb_page ? 'Post to fb' : 'Unable to post')
     redirect_to admin_posts_url
   end
 end

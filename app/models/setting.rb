@@ -13,6 +13,10 @@ class Setting < RailsSettings::CachedSettings
       params.each_pair { |k, v| send("#{k}=", v) }
     end
 
+    def update_fb_token
+      Setting['fb_page_token'] = PublishToFbService.instance.get_fb_page_token(Setting['fb_page'])
+    end
+
     def is_auto_post?
       self.auto_post == 'false' ? false : !!self.auto_post
     end

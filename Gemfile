@@ -78,4 +78,7 @@ gem 'will_paginate', '~> 3.0.6'
 # Customize will paginate with materialize
 gem 'will_paginate-materialize'
 
+# Facebook OmniAuth
+gem 'omniauth-facebook'
+
 ruby '2.2.3'
